@@ -130,6 +130,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.match_mode_combo.setCurrentIndex(match_index)
         filter_layout.addWidget(self.match_mode_combo, 3, 5)
 
+        reset_filters_button = QtWidgets.QPushButton("Reset Filters")
+        reset_filters_button.clicked.connect(self._reset_filters)
+        filter_layout.addWidget(reset_filters_button, 4, 5)
+
         generate_button = QtWidgets.QPushButton("Generate Regex")
         generate_button.clicked.connect(self._generate_regex)
         filter_layout.addWidget(generate_button, 2, 5)
@@ -517,6 +521,28 @@ class MainWindow(QtWidgets.QMainWindow):
     def _current_match_mode(self) -> str:
         data = self.match_mode_combo.currentData()
         return data if data else DEFAULT_MATCH_MODE
+
+    def _reset_filters(self) -> None:
+        fields = [
+            self.tabs_edit,
+            self.name_contains_edit,
+            self.min_total_edit,
+            self.max_total_edit,
+            self.min_price_edit,
+            self.max_price_edit,
+            self.min_quantity_edit,
+            self.max_quantity_edit,
+            self.top_n_edit,
+            self.bottom_n_edit,
+        ]
+
+        for field in fields:
+            field.blockSignals(True)
+            field.clear()
+            field.blockSignals(False)
+
+        self.filter_timer.stop()
+        self._apply_filters_update_view()
 
     def _load_saved_entries(self) -> None:
         entries, warnings = load_entries(self.storage_path)
