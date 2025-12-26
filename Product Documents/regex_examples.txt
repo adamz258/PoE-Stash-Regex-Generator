@@ -1,0 +1,130 @@
+'''Regex''', or '''Regular Expressions''', are strings of characters that can be used as shorthand to search for one or more specific results. Within the context of Path of Exile, it can be used to filter content in text such as specific stats or modifiers, or for specific item base types.
+
+Below are some examples of regex that can be copied and pasted into search input fields in-game.
+
+== Stash ==
+=== 6 Link ===
+<pre>"sockets: ([rgbw]-){5}[rgbw]"</pre>
+
+=== 6 Socket ===
+<pre>"sockets: ([rgbw][ -]){5}[rgbw]"</pre>
+
+=== Item Level 1-78 ===
+<pre>"item level: ([1-9]$|[1-6][0-9]$|7[0-8])"</pre>
+
+=== Item Level 80+ ===
+<pre>"item level: ([1-9]\d{2,}|[8-9]\d)"</pre>
+
+=== Quality ===
+<pre>"quality: \+([1-9][0-9])"</pre>
+
+=== 70+ Life ===
+<pre>"([1-9]\d{2,}|[7-9]\d).+life"</pre>
+
+=== Chaos Recipe ===
+<pre>"rare"|"item level: ([6][0-9]|[7][0-4])"</pre>
+
+=== +1 Wand ===
+<pre>"ll g"</pre>
+
+=== Physical damage ===
+<pre>Glint|Heav</pre>
+
+=== Flat Elemental Damage ===
+<pre>Heat|roste|Humm</pre>
+
+=== Flat Spell Damage ===
+<pre>"e to Sp"</pre>
+
+=== Increased Spell Damage ===
+<pre>Appre</pre>
+
+=== Str/Dex ===
+<pre>"!(^(str|dex))"</pre>
+
+=== Intelligence Items ===
+<pre>"!(^(str|dex))"</pre>
+
+=== Dexterity Items ===
+<pre>"!(^(str|int))"</pre>
+
+=== Strength Items ===
+<pre>"^str" "!(^dex)"</pre>
+
+=== Strength & Dexterity Items ===
+<pre>str: dex:</pre>
+
+=== Strength & Intelligence Items ===
+<pre>dex: str:</pre>
+
+=== Dexterity & Intelligence Items ===
+<pre>dex: int:</pre>
+
+== Show Maps ==
+Common, potentially scary map mods players may want to avoid, depending on their build.
+
+=== No Elemental Reflect ===
+<pre>"!tal d"</pre>
+
+=== No Physical Reflect ===
+<pre>""!f ph""</pre>
+
+=== No Cannot Regen ===
+<pre>"!ege"</pre>
+
+=== No Cannot Leech ===
+<pre>"!eec"</pre>
+
+Or some map mods players may desire:
+
+=== Rare Monsters each have a Nemesis Mod X% more Rare Monsters ===
+<pre>"neme"</pre>
+
+=== Slaying Enemies close together has a X% chance to attract monsters from Beyond ===
+<pre>"yi"</pre>
+
+=== Area contains two Unique Bosses ===
+<pre>"two"</pre>
+
+=== Magic Monster Packs each have a Bloodline Mod X% more Magic Monsters ===
+<pre>"packs"</pre>
+
+=== Slaying Enemies close together has a X% chance to attract monsters from Beyond ===
+<pre>"yi"</pre>
+
+=== Maps with Favorable Juicing Affixes ===
+<pre>"yi|neme|two|packs|rog|tot"</pre>
+
+=== 40%+ Monster Pack Size ===
+<pre>"yi|neme|two|packs|rog|tot" "iz.*([4-9]\d|\d{3})"</pre>
+
+=== 30 Monster Quantity+  ===
+<pre>"m q.*([3-9]\d|\d{3})"</pre>
+
+== Flasks ==
+
+Grants Immunity to Bleeding for # seconds if used while Bleeding Grants Immunity to Corrupted Blood for # seconds if used while affected by Corrupted Blood or Immunity to Bleeding and Corrupted Blood during Flask Effect #% less Duration
+<pre>"g an|af"</pre>
+
+Immunity to Poison during Flask Effect #% less Duration or Grants Immunity to Poison for # seconds if used while Poisoned
+<pre>"n fo|on d"</pre>
+
+Grants Immunity to Chill for # seconds if used while Chilled Grants Immunity to Freeze for # seconds if used while Frozen or Immunity to Freeze and Chill during Flask Effect #% less Duration
+<pre>"ze a|l f"</pre>
+
+Instant Recovery #% reduced Amount Recovered or Instant Recovery when on Low Life #% reduced Amount Recovered
+<pre>"see|y w"</pre>
+
+== Expedition ==
+Disclaimer: Unique item regexes can become outdated as new items are added to the core drop pool and can be highly subjective. It is recommended to create a custom list that suits your own goals or needs.
+
+Gwennen Popular Unique Gambling: Mageblood, Headhunter, Defiance of Destiny, The Squire, Rakiata's Dance, Soul Taker, Ralakesh's Impatience, and all Viridian Jewel uniques ([[version 3.25.0]]).
+<pre>"vy b|r be|a a|nt ro|eted b|vir|ved g|ege a"</pre>
+
+Gwennen Belt Unique Gambling: Only searches for Headhunter or Mageblood.
+<pre>"r be|vy b"</pre>
+
+==External links==
+* [https://poe.re/ Community-created Regex generator]
+
+[[Category:User interface]]

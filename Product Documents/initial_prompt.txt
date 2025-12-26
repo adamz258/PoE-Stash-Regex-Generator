@@ -1,0 +1,17 @@
+Help me create a PRD using markdown that I can share with a ChatGPT agent to do develop work at some point in the future. We are going to build an application that is used to read a local CSV file, and generate regex strings that the user can copy/paste into the game Path of Exile to more efficiently pull items from their stash tabs, to sell on the in-game currency exchange. The application can be written in whichever language is deemed best. The application must be reliable, it must have a GUI, it must be able to read from local disk, it must be able to intelligently parse CSV files up to 10,000 rows long, it must be able to sort data, it must be able to intelligently generate regex strings in an efficient manner (i.e. take many long strings and generate small regex snippets that won't have collisions or false positives), it must be able to store these regex strings for a user to re-use in the future, the user must be able to click a single button to "copy to clipboard". These are core high level functional requirements. Detailed requirements will come in subsequent prompts. 
+
+Here is a sample of what the CSV file will look like:
+"Name","Tab","Quantity","Price","Total"
+"Mirror of Kalandra","c","2","","219138"
+"Hinekora's Lock","c","2","","41200"
+"Mirror Shard","c","10","","54270"
+"Dark Temptation","div","1","","1408"
+"Tattoo of the Arohongui Shaman","tatts/runes","1","","1162"
+"Horned Scarab of Pandemonium","frag","3","","902.6999999999999"
+"Horned Scarab of Awakening","frag","5","","1244"
+
+In this example the user might want a regex string to be generated for all high value items in the "frag" tab, and so ultimately I'd expect the application to be able to generate a regex string that looks something like "monium$|kening$".
+
+This is not an exact requirement, but it's an example of the type of work the application will need to do.
+
+Generate a PRD for this outlining the core use case, the value to the player, the tech stack, the requirements, etc. If there are other sections for the PRD that I need to elaborate on so that we can later build this application, provide a list for me to respond to.
