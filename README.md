@@ -2,6 +2,10 @@
 
 Desktop app that reads a local CSV export of Path of Exile stash data, filters items, and generates compact regex strings for in-game stash search. The core logic is headless and tested; the GUI is a thin shell over the core modules.
 
+## Screenshot
+![PoE Stash Regex Generator UI](screenshots/poe-stash-generator-ui.png)
+
+
 ## Features
 - Load CSV exports (up to 10,000 rows)
 - Filter by tab, name substring, total/price/quantity thresholds, top/bottom X
