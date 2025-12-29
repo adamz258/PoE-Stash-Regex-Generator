@@ -5,6 +5,8 @@ Desktop app that reads a local CSV export of Path of Exile stash data, filters i
 ## Screenshot
 ![PoE Stash Regex Generator UI](screenshots/poe-stash-generator-ui.png)
 
+## Demo
+https://www.youtube.com/watch?v=tmT83r8fARQ
 
 ## Features
 - Load CSV exports (up to 10,000 rows)
